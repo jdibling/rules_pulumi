@@ -1,0 +1,13 @@
+load("@io_bazel_rules_pulumi//pulumi:pulumi.bzl", "declare_pulumi_toolchains")
+
+package(default_visibility = ["//visibility:public"])
+
+declare_pulumi_toolchains(
+    version = "{version}",
+)
+
+filegroup(
+    name = "{name}",
+    srcs = ["pulumi/pulumi{exe}"],
+    visibility = ["//visibility:public"],
+)
